@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  job_id: 1
+  time_in: 2013-05-13 21:48:46
+  time_out: 2013-05-13 21:48:46
+  date_in: 2013-05-13
+  date_out: 2013-05-13
+
+two:
+  job_id: 1
+  time_in: 2013-05-13 21:48:46
+  time_out: 2013-05-13 21:48:46
+  date_in: 2013-05-13
+  date_out: 2013-05-13
