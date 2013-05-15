@@ -1,0 +1,42 @@
+<header>
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>        
+      </a>
+
+
+      <nav>
+        <div class="nav-collapse">
+          <%=link_to(image_tag("truLine.jpg",:size => "150x75", :alt=> "TruLine Logo"),
+             root_path, :title=>"Return Home", :class=>"logo") %>
+          <ul class="nav pull-right">      
+            <li class="dropdown">
+              <div class="nav-logins">
+              <% if user_signed_in? %>
+                
+                  <h4><%= link_to 'Logged in as:'%> &nbsp;  
+                    <%= link_to current_user.name %></h4>
+                 
+
+
+
+ 
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <%= link_to "Logout", destroy_user_session_path, method: :delete %></h5>
+                
+              <% else %>  
+                <li><%= link_to "Sign up", new_user_registration_path %> |</li>
+                <li><%= link_to "Login", new_user_session_path %></li>
+              <% end %> 
+            </div>
+            </li> 
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

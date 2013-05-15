@@ -1,0 +1,8 @@
+<div class="center hero-unit">
+  		<%= simple_form_for(@job, :html => {:class => 'form-horizontal' }) do |f| %>
+  			<%= f.association :user, :lebel_method => :name %>
+  			<%= f.input :job_code %>
+  			<%= f.input :name %>
+  			<%= f.button :submit %>
+ 	<% end %>
+</div>
