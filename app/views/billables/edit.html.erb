@@ -1,0 +1,11 @@
+<div class="center-hero-unit">
+	<center>
+		<h1>Clock Out</h1>
+		<%= simple_form_for(@billable, :html => {:class => 'form-horizontal' }) do |f| %>
+			<%= f.hidden_field :time_out, :value => Time.now %>
+			<%= f.hidden_field :date_out, :value => Date.today %>
+			<br>
+			<%= f.button :submit %>
+		<% end %>
+	</center>
+</div>

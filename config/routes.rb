@@ -5,7 +5,10 @@ Timetrack::Application.routes.draw do
   resources :jobs
   resources :billables
 
+
   root :to => "jobs#index"
+
+
 
 
 

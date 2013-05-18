@@ -1,0 +1,32 @@
+<div class="hero-unit">
+	<h1>Job Time Detail</h1>
+	<h2><%= @job.name %></h2>
+</div>
+<% @time_array = Array.new %>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Date</th>
+			<th>Contractor Name</th>
+			<th>Time In</th>
+			<th>Time Out</th>
+			<th>Billable Hours</th>
+		</th>
+	</thead>
+	<tbody>
+		<% billable = Billable.where(job_id: @job.id).each do |b| %>
+			<tr>
+				<td><%= b.date_in %></td>
+				<td><%= User.where(id: @job.user_id).pluck(:name)[0] %></td>
+				<td><% time_in = b.time_in %><%= b.time_in.strftime('%H:%M:%S') %></td>
+				<td><% time_out = b.time_out %><%= b.time_out.strftime('%H:%M:%S') %></td>
+				<td><% total = ((time_out - time_in) / 60) / 60 %>
+					<%= number_with_precision(total, :precision => 2) %></td>
+				<% @time_array.push(total) %>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<% billable = Billable.where(job_id: @job.id) %>
+<h2>Total Job Time: <%= number_with_precision(@time_array.sum, :precision => 2) %> hours<h2>

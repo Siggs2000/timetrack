@@ -1,0 +1,22 @@
+<div class="hero-unit">
+	<h1>Jobs</h1>
+</div>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>View Time</th>
+			<th>Job Code</th>
+			<th>Job Name</th>
+		</th>
+	</thead>
+	<tbody>
+		<% Job.all.each do |j| %>
+		<tr>
+			<td><%= link_to 'View', job_path(j), :class => 'btn btn-mini btn-primary' %></td>
+			<td><%= j.job_code %></td>
+			<td><%= j.name %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -1,0 +1,12 @@
+<div class="center-hero-unit">
+	<center>
+		<h1>Clock In</h1>
+		<%= simple_form_for(@billable, :html => {:class => 'form-horizontal' }) do |f| %>
+			<%= f.input :job_id, :collection => Job.all %>
+			<%= f.hidden_field :time_in, :value => Time.now %>
+			<%= f.hidden_field :date_in, :value => Date.today %>
+			<br>
+			<%= f.button :submit %>
+		<% end %>
+	</center>
+</div>

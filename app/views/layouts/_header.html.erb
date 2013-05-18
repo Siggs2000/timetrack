@@ -15,17 +15,11 @@
           <%=link_to(image_tag("truLine.jpg",:size => "150x75", :alt=> "TruLine Logo"),
              root_path, :title=>"Return Home", :class=>"logo") %>
           <ul class="nav pull-right">      
-            <li class="dropdown">
               <div class="nav-logins">
               <% if user_signed_in? %>
                 
                   <h4><%= link_to 'Logged in as:'%> &nbsp;  
-                    <%= link_to current_user.name %></h4>
-                 
-
-
-
- 
+                    <%= link_to current_user.name %></h4> 
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <%= link_to "Logout", destroy_user_session_path, method: :delete %></h5>
                 
               <% else %>  
